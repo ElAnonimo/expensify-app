@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import moment from 'moment';
+import numeral from 'numeral';
 
 const ExpenseListItem = ({ id, amount, description, createdAt }) => (
 	<table>
@@ -12,7 +12,7 @@ const ExpenseListItem = ({ id, amount, description, createdAt }) => (
 		<tbody>
 			<tr>
 				<td style={{border: '1px solid blue'}}>{id}</td>
-				<td style={{border: '1px solid blue'}}>{amount}</td>
+				<td style={{border: '1px solid blue'}}>{numeral(amount / 100).format('0,0[.]00 $')}</td>
 				<td style={{border: '1px solid blue'}}>{description}</td>
 				<td style={{border: '1px solid blue'}}>{createdAt}</td>
 				<td><Link to={`/edit/${id}`}>edit</Link></td>
