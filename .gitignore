@@ -1,4 +1,7 @@
 node_modules
 package-lock.json
 yarn.lock
-.gitignore
+public/bundle.js
+public/bundle.js.map
+public/styles.css
+public/styles.css.map
